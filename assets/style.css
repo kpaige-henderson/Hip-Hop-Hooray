@@ -1,0 +1,77 @@
+body {
+    background-color: #000000de;
+    color: #fff;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+nav {
+    padding: 20px;
+    background-color: #ffbb00;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(32, 255, 3, 0.727);
+
+}
+
+main {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.score {
+    margin-bottom: 15px;
+}
+
+.start {
+    margin-bottom: 10px;
+}
+
+.quiz, .scores {
+    margin-top: 30px;
+}
+
+.timer, .score {
+    font-size: large;
+    color: rgba(32, 255, 3, 0.727);
+    text-decoration: underline;
+}
+
+.questions {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.options {
+    background-color: #ff7300;
+    color: #000;
+    padding: 10px 20 px;
+    font-size: 18px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(255, 238, 3);
+}
+
+.h2 {
+    color: rgba(32, 255, 3, 0.727);
+    text-decoration: underline;
+}
+
+.form {
+    background-color: #0008ffda;
+    color: #000;
+    padding: 10px 80px;
+    font-size: 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 108, 3, 0.5);
+}
+
+.restartBtn {
+    background-color: #0008ffda;
+    color: #000;
+    padding: 10px 80px;
+    font-size: 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 108, 3, 0.5);
+}
