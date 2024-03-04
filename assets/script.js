@@ -38,10 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
             answer: "House"
         },
         {
-            question: "What famous TV gave hip hop a platform to become mainstream?",
+            question: "What famous TV show gave hip hop a platform to be introduced to mainstream?",
             options: ["Bandstand", "Run's House", "House Party", "Soul Train"],
             answer: "Soul Train"
         },
+        {
+            question: "End!",
+            options: ""
+        }
 
     ];
 
