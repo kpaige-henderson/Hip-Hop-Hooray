@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hip Hop Quiz</title>
     <link rel="stylesheet" href="./assets/style.css">
 </head>
+
 <body>
     <nav>
         Are you HIP?! Than HOP on this quiz to test your Hip Hop knowledge!
+        <br>
+        <div class="score">Hip Points: <span id="points">0</span></div>
+        <div class="timer">Countdown: <span id="seconds">60</span></div>
     </nav>
     <main>
-        <div class="score">Hip Points: <span id="points">0</span></div>
         <div class="start">
             <button id="btn">Let's Begin!</button>
         </div>
         <div class="quiz" class="hidden">
-            <div class="timer">Countdown: <span id="seconds">60</span></div>
             <p class="questions"></p>
             <ul class="options">
-                <li><button id="01"></button></li>
-                <li><button id="02"></button></li>
-                <li><button id="03"></button></li>
-                <li><button id="04"></button></li>
+                <li><button id="btn01"></button></li>
+                <li><button id="btn02"></button></li>
+                <li><button id="btn03"></button></li>
+                <li><button id="btn04"></button></li>
             </ul>
         </div>
         <div class="scores" class="hidden">
@@ -36,13 +39,23 @@
                 <li></li>
                 <li></li>
             </ul>
-            <form class="form">
-                <input type="text" id="name" placeholder="MC Name">
-                <button type="submit" id="subscore">Add To The Hall Of Fame</button>
-                <button type="restart" id="goAgain">Run It Back!</button>
-            </form>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
         </div>
     </main>
-    <script src="./assets/script.js"></script>
 </body>
+
+<footer>
+    <form class="form">
+        <input type="text" id="name" placeholder="MC Name">
+        <button type="submit" id="subscore">Add To The Hall Of Fame</button>
+        <button type="restart" id="goAgain">Run It Back!</button>
+        <button type="clear" id="clearHistory">Clear Scores</button>
+    </form>
+</footer>
+<script src="./assets/script.js"></script>
 </html>

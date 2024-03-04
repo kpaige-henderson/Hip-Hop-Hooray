@@ -7,9 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const timerElement = document.getElementById("seconds");
     const submitScoreBtn = document.getElementById("subscore");
     const goAgainBtn = document.getElementById("goAgain");
+    const clearHistory = document.getElementById("clearHistory")
     let currentQuestionIndex = 0;
     let timeLeft = 60;
     let timerInterval;
+    let score = 0;
+
+    const userScores = JSON.parse(localStorage.getItem("userScores"))|| [];
 
     //questions, options, and answers to quiz
     const questions = [
@@ -33,6 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
             options: ["Waacking", "New Jack", "Locking", "House"],
             answer: "House"
         },
+        {
+            question: "What famous TV gave hip hop a platform to become mainstream?",
+            options: ["Bandstand", "Run's House", "House Party", "Soul Train"],
+            answer: "Soul Train"
+        },
 
     ];
 
@@ -54,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function startTimer() {
         timerInterval = setInterval(() => {
-            timeLeft --;
+            timeLeft--;
             timerElement.textContent = timeLeft;
             if (timeLeft <= 0) {
                 clearInterval(timerInterval);
@@ -66,10 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function checkAnswer(selectedOption) {
         const currentQ = questions[currentQuestionIndex];
         if (selectedOption === currentQ.answer) {
-            // correct
-            //score ++;
-            //document.getElementById("points").textContent = score++;
-            //currentQuestionIndex++;
+            //correct
+            score++;
+            document.getElementById("points").textContent = score++;
         } else {
             //incorrect
             timeLeft -= 10;
@@ -78,10 +86,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.length) {
+
             displayQuestion();
-        } else {
-            endQuiz();
-        };
+        }
+
     };
     function endQuiz() {
         clearInterval(timerInterval);
@@ -92,17 +100,46 @@ document.addEventListener("DOMContentLoaded", function () {
     startBtn.addEventListener("click", beginQuiz);
 
     options.forEach(option => {
-        option.addEventListener("click", function() {
-            checkAnswer(option.textContent);
+        option.addEventListener("click", function () {
+            if (currentQuestionIndex < questions.length) {
+                checkAnswer(option.textContent);
+            }
+            else {
+                endQuiz();
+            }
         });
     });
+    function scoreHistory() {
+        let list = document.getElementById ("list")
+        list.textContent = ""
+        for (i=0; i<userScores.length; i ++) {
+            var li = document.createElement ("li")
+            li.textContent = userScores[i].initial+" "+userScores[i].score
+            list.appendChild(li)
+        }
+    };
 
-    submitScoreBtn.addEventListener("click", function(event) {
+    scoreHistory()
+
+    submitScoreBtn.addEventListener("click", function (event) {
         event.preventDefault();
+        userScores.push({
+            initial:document.getElementById("name").value,
+            score:score
+        })
+        localStorage.setItem("userScores", JSON.stringify(userScores))
+        scoreHistory()
     });
 
-    goAgainBtn.addEventListener("click", function() {
+    goAgainBtn.addEventListener("click", function () {
         window.location.reload();
     });
+
+    clearHistory.addEventListener("click", function () {
+        localStorage.clear()
+        let list = document.getElementById ("list")
+        list.textContent = ""
+    })
+
 
 });

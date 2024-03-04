@@ -8,7 +8,7 @@ nav {
     padding: 20px;
     background-color: #ffbb00;
     text-align: center;
-    font-size: larger;
+    font-size: 30px;
     font-weight: bold;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(7, 3, 255, 0.727);
@@ -28,29 +28,58 @@ main {
     margin-bottom: 10px;
 }
 
+#btn {
+    font-size: 50px;
+    border-radius: 8px;
+    background-color: rgba(13, 31, 227, 0.639);
+    color: white;
+    border: 2px solid rgb(0, 19, 128);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition-duration: 0.4s;
+}
+
+#btn:hover {
+    background-color: #ffbb00; 
+    color: white;
+}
+
+#btn01, #btn02, #btn03, #btn04{
+    font-size: 30px;
+    border-radius: 8px;
+    background-color: rgba(200, 9, 243, 0.743);
+    color: white;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+    transition-duration: 0.4s;
+}
+
+#btn01:hover, #btn02:hover, #btn03:hover, #btn04:hover {
+    background-color: #ffbb00; 
+    color: white;
+}
+
 .quiz, .scores {
     margin-top: 30px;
 }
 
 .timer, .score {
     font-size: large;
-    color: rgba(32, 255, 3, 0.727);
+    color: white;
     text-decoration: underline;
-    background-color: teal;
+    background-color: #c209fbdb;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(7, 3, 255, 0.727);
     max-width: fit-content;
-    
-    
+    display:inline;
+
 }
 
 .questions {
-    font-size: 24px;
+    font-size: 50px;
     margin-bottom: 20px;
-    background-color: teal;
-    color: #000;
+    background-color: #00bfffb6;
+    color: white;
     border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(7, 3, 255, 0.727);
+    box-shadow: 0 4px 8px rgba(255, 188, 3, 0.727);
 }
 
 
@@ -61,24 +90,39 @@ main {
     font-size: 18px;
     margin: 5px;
     border-radius: 4px;
-    box-shadow: 0 4px 8px rgb(37, 3, 255);
     max-width: fit-content;
 }
 
 .h2 {
-    color: rgba(32, 255, 3, 0.727);
+    color: white;
     text-decoration: underline;
-    background-color: teal;
+    background-color: rgba(13, 31, 227, 0.639);
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(7, 3, 255, 0.727);
     max-width: fit-content;
+    margin-top: 200px;
 }
 
 .form {
+    text-align: center;
     background-color: #ffbb00;
     color: #000;
     padding: 10px 80px;
     font-size: 18px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(7, 3, 255, 0.727);
+}
+
+#subscore, #goAgain, #clearHistory {
+    border-radius: 8px;
+    background-color: rgba(13, 31, 227, 0.849);
+    color: white;
+    border: 2px solid rgb(0, 19, 128);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition-duration: 0.4s;
+}
+
+#subscore:hover, #goAgain:hover, #clearHistory:hover {
+    background-color: #00ff5e; 
+    color: teal;
 }
